@@ -108,7 +108,7 @@ function Table(props) {
                             <thead
                                 className="text-xs text-gray-900 uppercase bg-gray-50 dark:text-gray-900">
                                 <tr>
-                                    <th>No</th>
+                                    <th className='ps-3'>No</th>
                                     <th scope="col" className="px-6 py-3">
                                         Name
                                     </th>
@@ -130,7 +130,7 @@ function Table(props) {
                                 {user.map((data, index) => (
                                     <>
                                         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
-                                            <th>{index + 1}</th>
+                                            <th className='ps-3'>{index + 1}</th>
                                             <th scope="row"
                                                 className="px-6 py-4 font-medium whitespace-nowrap">
                                                 {data.name}
