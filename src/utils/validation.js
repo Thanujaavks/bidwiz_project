@@ -228,6 +228,9 @@ export function validateProduct(values) {
     if (!values.currentprice) {
         errors.currentprice = "currentprice is Required"
     }
+    if (!values.description) {
+        errors.description = "Description is Required"
+    }
 
     return errors;
 }

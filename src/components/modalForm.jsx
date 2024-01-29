@@ -215,7 +215,10 @@ function ModalForm(props) {
                                             onChange={handleChange}
                                             disabled={props.type === "View"}
                                             value={values?.description || ""}
-                                            ></textarea>
+                                            >
+                                            {errors.description && <p className={"text-danger"}>{errors.description}</p>}
+
+                                            </textarea>
                                     </div>
 
 

@@ -27,7 +27,7 @@ const Home = () => {
         // { name: "Cart", link: "/", icon: FiShoppingCart },
         // { name: "Saved", link: "/", icon: AiOutlineHeart, margin: true },
 
-        { name: "Logout", link: "/logout", icon: CgLogOut },
+        // { name: "Logout", link: "/logout", icon: CgLogOut },
 
 
 
