@@ -23,7 +23,7 @@ function Table(props) {
     const dispatch = useDispatch();
     const [deletedId, setDeletedId] = useState(null);
     const [selectedData, setSelectedData] = useState([]);
-    
+
 
 
 
@@ -34,7 +34,7 @@ function Table(props) {
     async function fetchData() {
         const result = await axios.get("http://127.0.0.1:8000/product");
         setProduct(result.data);
-        
+
     }
     useEffect(() => {
         // dispatch(toggleLoader(true))
@@ -129,58 +129,48 @@ function Table(props) {
                                         Current Price
                                     </th>
                                     <th scope="col" className="px-6 py-3">
-                                       
+
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {product.map((data, index) => (
                                     <>
-                                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
-                                        <th className='ps-3' scope="row">{index + 1}</th>
-                                        <th
-                                            className="px-6 py-4 font-medium whitespace-nowrap">
-                                            {data.name}
-                                        </th>
+                                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
+                                            <th className='ps-3' scope="row">{index + 1}</th>
+                                            <th
+                                                className="px-6 py-4 font-medium whitespace-nowrap">
+                                                {data.name}
+                                            </th>
 
-                                        <td className="px-6 py-4">
-                                            {data.category}
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            {data.startprice}
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            {data.currentprice}
-                                        </td>
-                                        <td className="px-6 py-4 flex gap-1">
-                                            <FeatherIcon className={"action-icons w-5"} icon={"eye"} onClick={() => {
-                                                setSelectedProduct(data)
-                                                setModalType("View");
-                                                setModalShow(true)
-                                                
-                                            }} />
-                                            <FeatherIcon className={"action-icons w-5"} icon={"edit"}
-                                                onClick={() => {
+                                            <td className="px-6 py-4">
+                                                {data.category}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                {data.startprice}
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                {data.currentprice}
+                                            </td>
+                                            <td className="px-6 py-4 flex gap-1">
+                                                <FeatherIcon className={"action-icons w-5"} icon={"eye"} onClick={() => {
                                                     setSelectedProduct(data)
-                                                    setModalType("Edit");
+                                                    setModalType("View");
                                                     setModalShow(true)
-                                                    
+
                                                 }} />
-                                            <FeatherIcon className={"action-icons text-red w-5"} icon={"trash-2"} onClick={() => handleDelete(data.id)} />
-                                        </td>
-                                    </tr>
-                                                  <ModalForm
-                                                  show={modalShow}
-                                                  type={modalType}
-                                                  product={selectedProduct}
-                                                  update={() => setUpdate(!update)}
-                                                  onHide={() => {
-                                                      setModalShow(false)
-                                                      setSelectedProduct(null)
-                                                  }}
-                                                  item={data}
-                                              />
-                                              </>
+                                                <FeatherIcon className={"action-icons w-5"} icon={"edit"}
+                                                    onClick={() => {
+                                                        setSelectedProduct(data)
+                                                        setModalType("Edit");
+                                                        setModalShow(true)
+
+                                                    }} />
+                                                <FeatherIcon className={"action-icons text-red w-5"} icon={"trash-2"} onClick={() => handleDelete(data.id)} />
+                                            </td>
+                                        </tr>
+
+                                    </>
                                 ))}
 
                             </tbody>
@@ -189,9 +179,20 @@ function Table(props) {
 
 
                 </div>
-  
+
             </div>
 
+            <ModalForm
+                show={modalShow}
+                type={modalType}
+                product={selectedProduct}
+                update={() => setUpdate(!update)}
+                onHide={() => {
+                    setModalShow(false)
+                    setSelectedProduct(null)
+                }}
+            //   item={data}
+            />
         </div>
     );
 }

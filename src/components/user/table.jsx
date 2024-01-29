@@ -162,17 +162,7 @@ function Table(props) {
                                                 />
                                             </td>
                                         </tr>
-                                        <ModalForm
-                                            show={modalShow}
-                                            type={modalType}
-                                            user={selectedUser}
-                                            update={() => setUpdate(!update)}
-                                            onHide={() => {
-                                                setModalShow(false)
-                                                setSelectedUser(null)
-                                            }}
-                                            item={data}
-                                        />
+
                                     </>
                                 ))}
 
@@ -184,6 +174,17 @@ function Table(props) {
                 </div>
 
             </div>
+            <ModalForm
+                                            show={modalShow}
+                                            type={modalType}
+                                            user={selectedUser}
+                                            update={() => setUpdate(!update)}
+                                            onHide={() => {
+                                                setModalShow(false)
+                                                setSelectedUser(null)
+                                            }}
+                                            // item={data}
+                                        />
 
         </div>
     );
