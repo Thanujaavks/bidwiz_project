@@ -7,11 +7,9 @@ import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 import { IoHomeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { Login } from "./components/login/login";
-import Table from "./components/table";
 import { BiCategory } from "react-icons/bi";
 import { CgLogOut } from "react-icons/cg";
-import ModalForm from "./components/modalForm";
+import Table from "./table";
 
 const Home = () => {
     
@@ -80,10 +78,9 @@ const Home = () => {
             </div>
 
             <div className="p-[80px] w-100 text-gray-900 font-semibold">
-                <h2 className={"text-[#0052d4] mb-8"}>Products</h2>
-                
+                <h2 className={"text-[#0052d4] mb-8"}>Users</h2>
+                <Table/>
 
-                <Table />
                 {/* <ModalForm/> */}
 
             </div>

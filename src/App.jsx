@@ -1,15 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Layout from './layout/layout';
 import {Route, Routes} from 'react-router-dom';
-import {Tasks} from './components/tasks/tasks';
-import {Calendar} from './components/calendar/calendar';
-import {Analysis} from './components/analysis/analysis';
-import {Settings} from './components/settings/settings';
 import {Login} from './components/login/login';
 import Home from './Home';
-import List from './components/list'
-
+import User from './components/user/user';
+import ConfirmationDialog from './utils/confirmation-dialog';
 
 function App() {
     return (
@@ -17,14 +12,16 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Logout" element={<Login/>}/>
-
+                <Route path="/user" element={<User/>}/>
+                
             </Routes>
+            <ConfirmationDialog/>
 
             {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/calendar" element={<Calendar />} />
-        <Route path="/analysis" element={<Analysis />} />
+        <Route path="/category" element={<Category />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/login" element={<Login />} />
       </Routes> */}
