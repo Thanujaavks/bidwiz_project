@@ -129,7 +129,7 @@ function Table(props) {
                                         Current Price
                                     </th>
                                     <th scope="col" className="px-6 py-3">
-                                        Actions
+                                       
                                     </th>
                                 </tr>
                             </thead>
